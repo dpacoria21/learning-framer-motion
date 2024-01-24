@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+}
+
+.separator {
+    width: 100%;
+    height: 10px;
+    background: #202020;
+    border-radius: 3px;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.8);
+}
