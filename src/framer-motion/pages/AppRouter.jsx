@@ -1,6 +1,6 @@
 import { NavLink, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
-import {AnimatePresence} from 'framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 
 import { HomePage } from './HomePage';
 import { AboutPage } from './AboutPage';
@@ -12,17 +12,98 @@ export const AppRouter = () => {
 
     return (
         <>
-            <ul key={'1'}>
-                <li>
-                    <NavLink to={'/home'}>Home</NavLink>
+            {/* <motion.div
+                layout
+            > */}
+
+            <ul style={{
+                listStyle: 'none',
+                display: 'flex',
+                gap: 50
+            }}>
+                <li style={{
+                    position: 'relative'
+                }}>
+                    <NavLink  style={{
+                        textDecoration: 'none',
+                        fontSize: 22,
+                        fontWeight: 'bold',
+                        color: '#f7d5a2'
+                    }} to={'/home'}>
+                        {({ isActive }) => (
+                            <div>
+                                    Home
+                                {isActive ? (<motion.div
+                                    style={{
+                                        position: 'absolute',
+                                        width: '100%',
+                                        height: 5,
+                                        top: '120%',
+                                        backgroundColor: '#555555'
+                                    }}
+                                    layoutId='indicator'
+                                >
+                                </motion.div>) : ''}
+                            </div>
+                        )}
+                    </NavLink>
                 </li>
-                <li>
-                    <NavLink to={'/about'}>About</NavLink>
+                <li style={{
+                    position: 'relative'
+                }}>
+                    <NavLink style={{
+                        textDecoration: 'none',
+                        fontSize: 22,
+                        fontWeight: 'bold',
+                        color: '#f7d5a2'
+                    }} to={'/about'}>
+                        {({ isActive }) => (
+                            <div>
+                                    About
+                                {isActive ? (<motion.div
+                                    style={{
+                                        position: 'absolute',
+                                        width: '100%',
+                                        height: 5,
+                                        top: '120%',
+                                        backgroundColor: '#555555'
+                                    }}
+                                    layoutId='indicator'
+                                >
+                                </motion.div>) : ''}
+                            </div>
+                        )}
+                    </NavLink>
                 </li>
-                <li>
-                    <NavLink to={'/contact'}>Contact</NavLink>
+                <li style={{
+                    position: 'relative'
+                }}>
+                    <NavLink style={{
+                        textDecoration: 'none',
+                        fontSize: 22,
+                        fontWeight: 'bold',
+                        color: '#f7d5a2'
+                    }} to={'/contact'}>
+                        {({ isActive }) => (
+                            <div>
+                                    Contact
+                                {isActive ? (<motion.div
+                                    style={{
+                                        position: 'absolute',
+                                        width: '100%',
+                                        height: 5,
+                                        top: '120%',
+                                        backgroundColor: '#555555'
+                                    }}
+                                    layoutId='indicator'
+                                >
+                                </motion.div>) : ''}
+                            </div>
+                        )}
+                    </NavLink>
                 </li>
             </ul>
+            {/* </motion.div> */}
 
             <AnimatePresence mode='wait'>
                 <Routes location={location} key={location.pathname}>
