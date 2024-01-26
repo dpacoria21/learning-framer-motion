@@ -1,5 +1,6 @@
-import {motion} from 'framer-motion';
+import {motion, AnimatePresence} from 'framer-motion';
 import { useState } from 'react';
+import { ManualControling } from './ManualControling';
 
 export const VariantAndPropagation = () => {
 
@@ -69,8 +70,9 @@ export const VariantAndPropagation = () => {
                     </motion.li>
                 ))}
             </motion.ul>
-            
-            
+            <AnimatePresence>
+                {show ? <ManualControling /> : null}
+            </AnimatePresence>
         
         </>
     );
