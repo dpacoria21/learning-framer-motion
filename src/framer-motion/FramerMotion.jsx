@@ -1,5 +1,6 @@
 import { DragAnimation, ExitEnterAnimation, FirstAnimation, HoverAndTapAnimation, ScrollAnimation } from './components';
 import { ScrollAnimationTrigger } from './components/ScrollAnimationTrigger';
+import { VariantAndPropagation } from './components/VariantAndPropagation';
 import './FramerMotion.css';
 import { AppRouter } from './pages/AppRouter';
 
@@ -10,6 +11,8 @@ export const FramerMotion = () => {
         <>
             <div className='container'>
                 <h1>Animations</h1>
+                <VariantAndPropagation />
+                <div className='separator'></div>
                 <FirstAnimation />
                 <div className='separator'></div>
                 <ExitEnterAnimation />
